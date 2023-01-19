@@ -1,32 +1,22 @@
-package br.com.erudio.model;
+package br.com.erudio.response;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Objects;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
 public class Cambio implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String from;
     private String to;
-    private BigDecimal conversionFactor;
-    private BigDecimal convertedValue;
+    private Double conversionFactor;
+    private Double convertedValue;
     private String environment;
 
     public Cambio() {
     }
 
-    public Cambio(Long id, String from, String to, BigDecimal conversionFactor, BigDecimal convertedValue, String environment) {
+    public Cambio(Long id, String from, String to, Double conversionFactor, Double convertedValue, String environment) {
         this.id = id;
         this.from = from;
         this.to = to;
@@ -59,19 +49,19 @@ public class Cambio implements Serializable {
         this.to = to;
     }
 
-    public BigDecimal getConversionFactor() {
+    public Double getConversionFactor() {
         return conversionFactor;
     }
 
-    public void setConversionFactor(BigDecimal conversionFactor) {
+    public void setConversionFactor(Double conversionFactor) {
         this.conversionFactor = conversionFactor;
     }
 
-    public BigDecimal getConvertedValue() {
+    public Double getConvertedValue() {
         return convertedValue;
     }
 
-    public void setConvertedValue(BigDecimal convertedValue) {
+    public void setConvertedValue(Double convertedValue) {
         this.convertedValue = convertedValue;
     }
 
