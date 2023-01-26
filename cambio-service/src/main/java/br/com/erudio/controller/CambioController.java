@@ -1,7 +1,7 @@
 package br.com.erudio.controller;
 
-import br.com.erudio.model.Cambio;
-import br.com.erudio.repository.CambioRepository;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+import br.com.erudio.model.Cambio;
+import br.com.erudio.repository.CambioRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name = "Cambio Service API")
 @RestController
 @RequestMapping("cambio-service")
 public class CambioController {
@@ -23,6 +26,7 @@ public class CambioController {
     @Autowired
     private CambioRepository repository;
 
+    @Operation(description = "Get cambio from currency!")
     @GetMapping(value = "/{amout}/{from}/{to}")
     public Cambio getCambio(@PathVariable(value = "amout")BigDecimal amout, @PathVariable(value = "from") String from,
                             @PathVariable(value = "to") String to ) {

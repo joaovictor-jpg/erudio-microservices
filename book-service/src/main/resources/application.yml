@@ -44,3 +44,10 @@ spring:
     schemas: book_service
     user: root
     password: System256715
+  sleuth:
+    sampler:
+      probability: 1.0
+Springdoc:
+  show-actuator: true
+  api-docs:
+    path: book-service/v3/api-docs
