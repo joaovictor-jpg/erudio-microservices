@@ -1,0 +1,5 @@
+br\com\erudio\model\Cambio.class
+br\com\erudio\configuration\OpenApiConfiguration.class
+br\com\erudio\CambioServiceApplication.class
+br\com\erudio\controller\CambioController.class
+br\com\erudio\repository\CambioRepository.class
