@@ -38,6 +38,6 @@ jobs:
         run: mvn clean package -DskipTests
         
       - name: Docker Compose Build
-        working-directory: .Dockerfile
+        working-directory: .docker-compose
         run: docker-compose build
         
